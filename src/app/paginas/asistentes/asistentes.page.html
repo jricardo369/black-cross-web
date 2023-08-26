@@ -1,0 +1,96 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Asistentes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="regresar()" text=""></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end" *ngIf="idrol === 1">
+      <ion-button
+        href="editarclase/{{idClase}}/{{fechaf}}/{{horaInicio}}/{{horaFin}}/{{horario}}/{{nombreC}}/{{profesor}}/{{personas}}/{{estatus}}">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-img src="http://3.128.191.106:8080/imgs/logo.png"></ion-img> -->
+  <ion-img src="../../assets/img/iiroda.png"></ion-img>
+  <div style="margin-bottom: 10px;text-align: center;">
+ 
+    <label style="font-size: 15px;">Fecha: {{fechaf}}</label><br>
+    <label style="font-size: 14px;">
+      {{descripcionHorario}}
+    </label>
+    <br>
+    <label style="font-size: 12px;margin-bottom: 5px;">
+      Clase impartida por {{profesorNombre}}
+    </label>
+    <br>
+    <label class="label-lugares">
+      {{listado?.respuesta.lugares}}
+    </label>
+  
+</div>
+
+  <ion-list class="animated fast fadeInDown">
+
+    <!--<ion-item lines="full" style="text-align: center;">
+      <ion-label>
+        <h3>Fecha: {{fechaf}}</h3>
+        <h3>
+          {{descripcionHorario}}
+        </h3>
+        <h4>
+          Clase impartida por {{profesorNombre}}
+        </h4>
+        <label class="label-lugares">
+          {{listado?.respuesta.lugares}}
+        </label>  
+      </ion-label>
+    </ion-item>-->
+    <ion-item *ngFor="let Asistentes of listado?.respuesta.usuarios; 
+    let indice=index;" lines="none" color="gray" detail="false"  (click)="ponerFalta(Asistentes.idUsuario, Asistentes.nombre,Asistentes.lugar,Asistentes.asistio)">
+    <ion-card style="padding: 2px;" > 
+      
+        <!--<ion-card-content class="ajuste" (click)="ponerFalta(Asistentes.idUsuario, Asistentes.nombre)">-->
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div *ngIf="Asistentes.sexo == 'M'">
+                <label class="label-lugaresm">{{Asistentes.iniciales}}</label>
+                <label style="color: black; font-size: 12px;margin-left: 5px;">
+                  {{Asistentes.nombre}} 
+                </label>
+                <label class="label-lugar">L{{Asistentes.lugar}}</label>
+                <label *ngIf="Asistentes.asistio == 'F'" class="label-asistio">{{Asistentes.asistio}}</label>
+              </div>
+              <div *ngIf="Asistentes.sexo == 'F'">
+                <label class="label-lugaresf">{{Asistentes.iniciales}}</label>
+                <label style="color: black; font-size: 12px;margin-left: 5px;">
+                  {{Asistentes.nombre}} 
+                </label>
+                <label class="label-lugar">L{{Asistentes.lugar}}</label>
+                <label *ngIf="Asistentes.asistio == 'F'" class="label-asistio">{{Asistentes.asistio}}</label>
+              </div>
+              </ion-col>
+            </ion-row>
+            </ion-grid>
+
+    <!--<ion-card>
+      <ion-item *ngFor="let Asistentes of listado?.respuesta.usuarios; 
+        let indice=index;" class="animated fast fadeInDown">
+        <ion-card-content class="ajuste" (click)="ponerFalta(Asistentes.idUsuario, Asistentes.nombre)">
+          <ion-label *ngIf="Asistentes.sexo == 'H'">
+            <h3> <span class="blue"> {{Asistentes.iniciales}} </span> {{Asistentes.nombre}} </h3>
+          </ion-label>
+          <ion-label *ngIf="Asistentes.sexo == 'F'">
+            <h3> <span class="pink"> {{Asistentes.iniciales}} </span> {{Asistentes.nombre}} </h3>
+          </ion-label>
+        </ion-card-content>
+      </ion-item>
+    </ion-card>  -->    
+    </ion-card>
+  </ion-item>
+  </ion-list>
+</ion-content>

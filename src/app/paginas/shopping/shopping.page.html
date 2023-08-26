@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-title>Shopping</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="rol === 1" (click)="crearprod()">
+        <ion-icon class="dorado" slot="icon-only" name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Buscar" animated (ionChange)="buscar($event)" [debounce]="250">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="listado?.respuesta === null">
+    <ion-item id="listaslide" *ngFor="let item of [1,1,1,1,1,1,1]" size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-card>
+        <ion-grid>
+          <ion-label>
+            <h2>
+              <ion-skeleton-text animated style="width: 90%">
+              </ion-skeleton-text>
+            </h2>
+            <p><ion-chip>
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+              </ion-chip>
+            </p>
+            <p> <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+            </p>
+          </ion-label>
+        </ion-grid>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="animated slow fadeInLeft">
+    <ion-item-sliding id="listaslide" *ngFor="let Productos of listado?.respuesta ">
+      <ion-item lines="none" color="gray" detail="false" class="ion-no-padding" 
+      href="verproducto/{{Productos.titulo}}/{{Productos.descripcionCorta}}/{{Productos.descripcionLarga}}/{{Productos.costo}}">
+        <ion-card style="padding: 0px;">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <ion-item lines="none" color="gray" detail="false" class="ion-no-padding" style="float:left;">
+                  <ion-thumbnail item-left>
+                    <img src="assets/img/image.png" width="10%" height="10%" />
+                  </ion-thumbnail>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        <label class="label-titulo">
+
+                          {{Productos.titulo}}
+                        </label>
+                        <br>
+                        <label class="label-subtitulo">
+
+                          {{Productos.descripcionCorta}}
+                        </label>
+                        <br>
+                        <label class="label-costo">
+
+                          $ {{Productos.costo}}
+                        </label>
+                      </ion-col>
+
+                    </ion-row>
+
+                  </ion-grid>
+                </ion-item>
+              </ion-col>
+              
+
+            </ion-row>
+
+          </ion-grid>
+
+        </ion-card>
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

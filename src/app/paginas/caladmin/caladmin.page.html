@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado">Calendario</ion-title>   
+    <!-- <ion-buttons slot="end">
+      <ion-button href="user">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>       
+    </ion-buttons>   -->
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="admin" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <br>
+  <br>
+  <div>
+    <ion-img src="../../assets/img/bkl.png"></ion-img>
+  </div>
+  <br>
+  <br>
+  <div>
+    <ion-calendar 
+      [(ngModel)]="date" 
+      [type]="type" 
+      [options]="options"
+      format="YYYY-MM-DD" 
+      (click)="onClick(date,fechaf)">
+    </ion-calendar>
+  </div>
+</ion-content>

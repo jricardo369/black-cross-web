@@ -1,0 +1,85 @@
+<ion-header class="ion-no-border" translucent>
+  <ion-toolbar>
+    <ion-title >Historial Asistencia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+     
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Buscar" animated (ionChange)="buscar($event)" [debounce]="250">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list style="text-align: center;" *ngIf="listado?.respuesta == ''">
+    <label > Sin asistencias</label>
+  </ion-list>
+
+  <ion-list *ngIf="listado?.respuesta === null">
+    <ion-item id="listaslide" *ngFor="let item of [1,1,1,1,1,1,1]" size="12" size-lg="3" size-md="4" size-sm="6">
+      <ion-card style="padding:3px;">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <label >
+                <ion-skeleton-text animated style="width: 60%">
+                </ion-skeleton-text>  
+              </label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <label >
+                <ion-skeleton-text animated style="width: 50%">
+                </ion-skeleton-text>  
+              </label>
+            </ion-col>
+          </ion-row>
+        </ion-grid>        
+      </ion-card>      
+    </ion-item>
+  </ion-list>
+
+  <ion-list  class="animated slow fadeInLeft">
+    <ion-item-sliding id="listaslide" *ngFor="let Asis of listado?.respuesta" >
+      <ion-item lines="none" color="gray" detail="false" class="ion-no-padding"
+        href="">
+        <ion-card style="padding: 0px;">
+          <ion-grid>
+           <ion-row>
+            <ion-col>
+              
+              
+             
+            </ion-col>
+          
+           </ion-row>
+           <ion-row>
+            <ion-col>
+              <!--<img class="asuetoimg" src="assets/img/perfil2.png">-->
+              <label class="nombreus">
+                
+                {{Asis.nombreUsuario}}
+              </label>
+              <label class="fechalabel">
+                
+                {{Asis.fechaAlta}}
+              </label>
+             
+            </ion-col>
+          
+           </ion-row>
+
+          </ion-grid>
+        
+        </ion-card>
+      </ion-item>
+     
+    </ion-item-sliding>
+  </ion-list>
+
+
+</ion-content>

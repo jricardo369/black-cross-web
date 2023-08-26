@@ -1,0 +1,124 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Lugares</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="regresar()" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-img src="../../assets/img/iiroda.png"></ion-img>
+  <div style="text-align: center;">
+ 
+    <div *ngIf="conGrid == 'false'">
+    <label style="font-size: 14px;">Seleccione su lugar en la clase de {{descripcionHorario}}</label><br>
+    <label style="font-size: 14px;">el dia {{fechaf}}</label><br>
+  </div>
+
+    <div *ngIf="conGrid == 'true'">
+      <label style="font-size: 14px;">Usted tiene apartado el lugar en {{descripcionHorario}}</label><br>
+    <label style="font-size: 14px;">el dia {{fechaf}}</label><br>
+    <label style="font-size: 14px;">el el lugar {{lugar}}</label><br><br><br><br>
+    <label style="font-size: 12px;">Desea eliminar su asistencia?</label><br>
+    
+    <ion-button (click)="eliminarAsistencia()" type="submit" size="large"  class="btndorado">
+      Eliminar asistencia</ion-button>
+    </div>
+    
+  
+</div>
+  <!--<ion-list inset="true" lines="none">
+    <ion-item>
+      <label class="letra"> Seleccione su lugar en la clase de {{descripcionHorario}}
+        <p class="letra">el dia {{fechaf}} </p>
+      </label>
+    </ion-item>
+  </ion-list>-->
+
+  <!-- <ion-grid>
+    <ion-row *ngFor="let row of [0,1,2,3,4]">
+      <ion-col *ngFor="let col of [0,1,2,3]">
+        <button ion-button (click)="seleccionarLugar(row, col)"
+                [class.seleccionado]="lugarSeleccionado === (row * 4) + (col+1)"
+                [class.rojo]="(row * 4) + col === 0"
+                [class.azul]="(row * 4) + col > 0 && (row * 4) + col < 18">
+          {{ (row * 4) + col + 1 }}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <!--<ion-grid>
+    <ion-row *ngFor="let row of [0,1,2,3,4]" >
+      <ion-col *ngFor="let col of [0,1,2,3]"  >
+        <button ion-button (click)="seleccionarLugar(row, col)"
+                [class.seleccionado]="lugarSeleccionado === (row * 4) + (col+1) "
+                >
+         
+          <ion-icon color="primary" name="bicycle-outline"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>-->
+  
+  <!--<ion-grid >
+    <ion-row *ngFor="let row of lugares | slice:0:5">
+      <ion-col *ngFor="let lugar of row" (click)="marcarSeleccionado(lugar)">
+        <ion-card class="center" [class.seleccionado]="lugar.seleccionado">
+          <ion-icon color="danger" *ngIf="lugar.numero == 17" name="bicycle-outline"></ion-icon>
+          <ion-icon color="primary" *ngIf="lugar.numero != 17 && lugar.numero < 19" name="bicycle-outline"></ion-icon>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-grid  *ngIf="conGrid == 'false'">
+    <ion-row *ngFor="let row of lugaresServicio ">
+      <ion-col *ngFor="let lugar of row" >
+        <ion-card  class="center" [class.seleccionado]="lugar.seleccionado" >
+          <ion-icon color="danger" *ngIf="lugar.numero == 18" name="bicycle-outline" ></ion-icon>
+          
+          <ion-icon color="primary" *ngIf="lugar.numero != 18 && lugar.numero < 19 && lugar.seleccionado == false" name="bicycle-outline" (click)="apartarLugar(lugar)"></ion-icon>
+          <ion-icon color="medium" *ngIf="lugar.numero != 18 && lugar.numero < 19 && lugar.seleccionado == true" name="bicycle-outline" ></ion-icon>
+          <ion-icon  *ngIf="lugar.numero == 19" ></ion-icon>
+          <ion-icon  *ngIf="lugar.numero == 20" ></ion-icon>
+       
+        </ion-card>
+       
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid> 
+
+  <!--<ion-grid id="gridlugares">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col></ion-col>
+      <ion-col>C</ion-col>
+      <ion-col>17</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>1</ion-col>
+      <ion-col>2</ion-col>
+      <ion-col>3<button ion-button (click)="apartarLugar(3)"
+        >
+  <ion-icon color="primary" name="bicycle-outline"></ion-icon>
+</button></ion-col>
+      <ion-col>4<button ion-button (click)="apartarLugar(4)"
+        >
+  <ion-icon color="primary" name="bicycle-outline"></ion-icon>
+</button></ion-col>
+    </ion-row>
+  </ion-grid>-->
+
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <ion-toolbar *ngIf="conGrid == 'true'">
+    <div style="text-align: center;" >
+    <label class="anuncio" style="font-size: 12px;">Recuerda que para no tener multa es necesario </label><br>
+    <label class="anuncio" style="font-size: 12px;">cancelar la clase 5 horas antes</label>
+  </div>
+  </ion-toolbar>
+
+</ion-footer>

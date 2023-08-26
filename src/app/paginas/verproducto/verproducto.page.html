@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="margin-top:15px">
+    <ion-slides  pager="true" >
+      <ion-slide>
+        <img src="assets/img/image.png" width="10%" height="10%" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/image.png" width="10%" height="10%" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/img/image.png" width="10%" height="10%" />
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+
+  <div style="text-align: left;">
+
+    <br><br>
+    <div style="margin-bottom: 5px;">
+      <label class="label-titulo">{{titulo}}</label><br>
+    </div>
+    <div style="margin-bottom: 5px;">
+      <label class="label-descc">{{descc}}</label><br>
+    </div>
+    <div style="">
+      
+      <label class="label-descl">{{descl}}</label><br>
+    </div>
+
+  </div>
+  <div style="text-align: right;margin-top: 10px;">
+    <label class="label-costo">$ {{costo}}</label><br>
+  </div>
+
+</ion-content>

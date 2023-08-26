@@ -1,0 +1,37 @@
+
+ion-content ion-card{
+    width: 100%;
+    margin: 10px;
+  }
+  
+  ion-item {
+    --padding-start: 0;
+  }
+
+  .label-titulo {
+    color: #000000;
+    font-size: 14px;
+  }
+
+  .label-subtitulo {
+    color: #3b403f;
+    font-size: 12px;
+  }
+
+  .label-costo {
+    margin-top: 10px;
+    background-color: #CEF781;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #0b0b0b;
+    border-radius: 15px;
+    font-size: 12px;
+  }
+
+  .imgv{
+    clear: right;
+    float: right;
+    width: 6%;
+  }

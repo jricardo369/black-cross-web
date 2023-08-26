@@ -1,0 +1,75 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Asistencia</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid id="gridlugares">
+    <ion-row>
+      <ion-col>
+          <ion-label style="color:gray;font-size: 12px;" position="floating"> Entresa tu codigo de usuario para tu asistencia</ion-label>
+        
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col ></ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label style="color:gray" position="floating"> Codigo</ion-label>
+          <ion-input  [(ngModel)]="codigo" name="nombre" type="text" required></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col ><button class='numeros2' ion-button (click)="valor(1)">1</button></ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(2)">2</button></ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(3)">3</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button class='numeros' ion-button (click)="valor(4)">4</button></ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(5)">5</button></ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(6)">6</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><button class='numeros' ion-button (click)="valor(7)">7</button></ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(8)">8</button></ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(9)">9</button></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button style="background-color: white;" class='' ion-button (click)="limpiar()">
+          <img src="/assets/img/clear.png" width="50%">
+        </button>
+      </ion-col>
+      <ion-col><button class='numeros' ion-button (click)="valor(0)">0</button></ion-col>
+      <ion-col>
+        
+        <button style="background-color: white;" class='' ion-button (click)="valor(b)">
+          <img src="/assets/img/backspace.png" width="50%">
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col> </ion-col>
+      <ion-col> </ion-col>
+      <ion-col> </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+
+  <ion-grid id="">
+    
+    <ion-row>
+      <ion-col><ion-button size="large" type="submit" expand="block" class="btndorado" (click)="entrar()">Entrar</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

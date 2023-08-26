@@ -1,0 +1,60 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true" padding class="background">
+  <form #loginForm="ngForm" novalidate>
+    <!-- <ion-img src="http://3.128.191.106:8080/imgs/logo.png"></ion-img> -->
+    <ion-img src="../../assets/img/bk.png"></ion-img>
+    
+    <div style="width: 90%;margin: auto;">
+    <ion-input style="margin-bottom: 10px; margin-top: 30px; padding: 5px; " placeholder="Usuario" type="text" [(ngModel)]="login.usuario" name="usuario" #usuario="ngModel" spellcheck="false"
+      autocapitalize="on" required></ion-input>
+    <ion-input style="margin-bottom: 10px;" placeholder="Contraseña" type="password" [(ngModel)]="login.contrasenia" name="contrasenia" type="password" #contrasenia="ngModel"
+      required></ion-input>
+
+    <ion-button style="margin-bottom: 20px;"  (click)="onLogin(loginForm)" size="large" expand="block" class="btndorado">
+      Iniciar Sesión
+    </ion-button>
+    <ion-button class="cc" size="large" expand="block" fill="clear" (click)="recuperar()">
+      Recuperar contraseña
+    </ion-button>
+  </div>
+
+    <!-- <ion-grid>
+      <ion-row color="primary">
+        <ion-col size-md="6" size-lg="5" size-xs="12" no-lines>
+          <div padding>
+            <ion-item>
+              <ion-label position="floating"> Usuario</ion-label>
+              <ion-input type="text" [(ngModel)]="login.usuario" name="usuario" #usuario="ngModel" spellcheck="false"
+                autocapitalize="on" required></ion-input>
+            </ion-item>
+            <ion-item style="margin-top: 10px;">
+              <ion-label position="floating"> Contraseña</ion-label>
+              <ion-input style="height:  30px;" type="password" [(ngModel)]="login.contrasenia" name="contrasenia" type="password"
+                #contrasenia="ngModel" required></ion-input>
+            </ion-item>
+          </div>
+          <div class="centrado">
+            <ion-button (click)="onLogin(loginForm)"  size="large" expand="block" class="btndorado">
+              Iniciar Sesión
+            </ion-button>
+            <ion-button class="forgot-btn dorado" fill="clear" (click)="recuperar()">
+              Recuperar contraseña
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>-->
+  </form>
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <label style="color:white; font-size: 10px;">V2.5</label> 
+</ion-footer>
+
+<!-- <ion-footer class="ion-no-border footer">
+  <ion-toolbar>
+    Aplicacion de prueba
+  </ion-toolbar>
+</ion-footer> -->

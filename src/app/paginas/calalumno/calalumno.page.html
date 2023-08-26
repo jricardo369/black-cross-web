@@ -1,0 +1,36 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title class="dorado" >Seleccione la fecha para su clase</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button href="user">
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>       
+    </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-button (click)="confirmCerrar()">
+        <ion-icon slot="icon-only" name="power-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>  -->
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <br>
+  <br>
+  <div>
+    <ion-img src="../../assets/img/bkl.png"></ion-img>
+  </div>
+  <br>
+  <br>
+  <div>
+    <ion-calendar [(ngModel)]="date" [type]="type" [options]="options" format="YYYY-MM-DD"
+      (click)="onClick(date,fechaf)">
+    </ion-calendar>
+  </div>
+
+  <!-- <div>
+    <ion-img src="../../assets/img/iroda.png"></ion-img>
+  </div> -->
+</ion-content>

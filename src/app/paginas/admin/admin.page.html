@@ -1,0 +1,196 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <ion-grid> 
+
+    <ion-row *ngIf="idrol === 1" >   
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="clases">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Clases</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-img (click)="clases()" class="icono" src='assets/img/cross.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="perfiles">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Perfiles</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img (click)="perfil()" class="icono" src='assets/img/profiles.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="asuetos">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Descansos</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img (click)="asuetos()" class="icono" src='assets/img/dayoff.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="calendario">
+          <ion-card-header>
+            <ion-card-title class="titulocard-b">Calendario</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img  (click)="caladmin()" class="icono" src='assets/img/calendar1-w.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="asistencias">
+          <ion-card-header>
+            <ion-card-title class="titulocard-b">Asistencias</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img  (click)="asistencias()" class="icono" src='assets/img/asistencia-b.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="clases">
+          <ion-card-header>
+            <ion-card-title class="titulocard">Historial Asis</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img  (click)="historialasis()" class="icono" src='assets/img/activity-history.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <ion-col size-md="6" size-lg="6" size-xs="6">
+        <ion-card class="shopping">
+          <ion-card-header>
+            <ion-card-title class="titulocard-b">Shopping</ion-card-title>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-img  (click)="shopping()" class="icono" src='assets/img/shop.png'></ion-img>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+
+    </ion-row>
+    
+    
+    <ion-row *ngIf="idrol === 2">
+        
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="perfiles-u">
+            <ion-card-header>
+              <ion-card-title class="titulocard-b">Perfil</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img (click)="user()" class="icono" src='assets/img/profile-w.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="shopping">
+            <ion-card-header>
+              <ion-card-title class="titulocard-b">Shopping</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img  (click)="shopping()" class="icono" src='assets/img/shop.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+  
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="clases">
+            <ion-card-header>
+              <ion-card-title class="titulocard">Calendario</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img  (click)="calalumno()" class="icono" src='assets/img/calendar1.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        
+
+    </ion-row>
+    
+    <ion-row *ngIf="idrol === 3" style="margin:auto">
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="perfiles-u">
+            <ion-card-header>
+              <ion-card-title class="titulocard-b">Perfil</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img (click)="user()" class="icono" src='assets/img/profile-w.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+        <ion-col size-md="6" size-lg="6" size-xs="6">
+          <ion-card class="clases">
+            <ion-card-header>
+              <ion-card-title class="titulocard">Calendario</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-img  (click)="caladmin()" class="icono" src='assets/img/calendar1.png'></ion-img>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+
+    </ion-row>
+    <!-- Fin Menu entrenador -->
+
+  </ion-grid>
+  
+
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <div *ngIf="idrol === 2 && mensaje != ''" class="rem" style="text-align: justify;margin:25px;">
+  <ion-grid style="background-color:#fff79c;margin:25px"> 
+    <ion-row  >
+      <ion-col >
+      
+        <ion-card-content style="padding:0px;">
+          <ion-img class="iconon" src='assets/img/not.png' ></ion-img>
+          <label style="font-size:10px;">{{mensaje}}</label>
+        </ion-card-content>
+        </ion-col>
+        </ion-row>
+</ion-grid>
+</div>
+  <!--<div *ngIf="idrol === 2 && mensaje != ''" class="rem" style="text-align: justify;margin:25px;">
+    <ion-img class="iconon" src='assets/img/not.png' ></ion-img>
+    <label style="font-size:10px;">{{mensaje}}</label>
+  </div>-->
+  
+  <label style="font-size:10px">{{nombre}}</label>
+  <ion-toolbar (click)="confirmCerrar()">
+    <label class="label-cerrar-sesion">Cerrar Sesión</label>
+  </ion-toolbar>
+</ion-footer>

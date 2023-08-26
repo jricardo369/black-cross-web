@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Producto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button class="dorado" defaultHref="" (click)="atras()" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <form #nuevoProducto="ngForm" novalidate>
+    <ion-grid>
+      <ion-row>
+        <ion-col size-md="6" size-lg="5" size-xs="12">
+          <div padding>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Titulo</ion-label>
+              <ion-input name="titulo" type="text" [(ngModel)]="na.titulo" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Descripcion corta</ion-label>
+              <ion-input name="descripcionCorta" type="text" [(ngModel)]="na.descripcionCorta" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Descripcion larga</ion-label>
+              <ion-input name="descripcionLarga" type="text" [(ngModel)]="na.descripcionLarga" required></ion-input>
+            </ion-item>
+            <br>
+            <ion-item>
+              <ion-label style="color:gray" position="floating">Costo</ion-label>
+              <ion-input name="costo" type="number" [(ngModel)]="na.costo" required></ion-input>
+            </ion-item>
+            <br>
+            
+            
+            <ion-item>
+              <ion-label style="color:gray" position="stacked">Fecha vencimiento</ion-label>
+              <ion-input name="fechaVencimiento" type="date" [(ngModel)]="na.fechaVencimiento" required></ion-input>
+            </ion-item>
+
+          </div>
+          <br>
+          <ion-segment  (ionChange)="segmentChanged($event)" value="{{horario}}" name="horario" type="text" [(ngModel)]="na.oferta" required>
+            <ion-segment-button value="1">
+              <ion-label>Oferta</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="0">
+              <ion-label>No oferta</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+          <br>
+          <div>
+            <ion-row>
+              <ion-col>
+                <ion-button (click)="nuevaProducto(nuevoProducto)" type="submit" size="large" expand="block" class="btndorado">
+                  Crear producto
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
