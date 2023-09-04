@@ -15,7 +15,7 @@ import { LoginService } from "src/app/servicios/login.service";
   styleUrls: ["./admin.page.scss"],
 })
 export class AdminPage implements OnInit {
-  urlapi = "http://localhost:8080/bk-api/";
+  urlapi = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/";
 
   usuario: any;
   idrol: any;
@@ -164,7 +164,7 @@ export class AdminPage implements OnInit {
   bloqueado(idUsuario) {
     this.servicio
       .getData(
-        "http://localhost:8080/bk-api/Usuarios/bloqueo-por-pago/" +
+        "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/Usuarios/bloqueo-por-pago/" +
           idUsuario
       )
       .subscribe((data) => {

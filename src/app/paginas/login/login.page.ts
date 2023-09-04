@@ -253,7 +253,7 @@ export class LoginPage implements OnInit {
 
   bloqueado(usuario){
 
-    this.servicio.getData('http://localhost:8080/bk-api/Usuarios/bloqueo-por-pago/'+ usuario ).subscribe(data => {
+    this.servicio.getData('http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/Usuarios/bloqueo-por-pago/'+ usuario ).subscribe(data => {
 
       this.usuario = data;
       console.log(data);

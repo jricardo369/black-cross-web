@@ -10,7 +10,7 @@ import { ModalInfEAPage } from '../modal-inf-ea/modal-inf-ea.page';
 })
 export class AsuetosPage implements OnInit {
 
-  urlapi = "http://localhost:8080/bk-api/";
+  urlapi = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/";
   listado: any;
   listadoRespuesta: any;
   codigo

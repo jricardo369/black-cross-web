@@ -89,7 +89,7 @@ export class AsistentesPage implements OnInit {
 
     this.servicio
       .getData(
-        "http://localhost:8080/bk-api/AsistenciaClases/" +
+        "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/AsistenciaClases/" +
           this.idClase +
           "?fecha=" +
           this.fechaf+"&sociedad="+this.sociedad
@@ -209,7 +209,7 @@ export class AsistentesPage implements OnInit {
     
     this.servicio
       .getData(
-        "http://localhost:8080/bk-api/AsistenciaClases/" +
+        "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/AsistenciaClases/" +
           this.idClase +
           "?fecha=" +
           this.fechaf+"&sociedad="+this.sociedad

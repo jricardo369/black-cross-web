@@ -46,9 +46,9 @@
             <ion-col>
               <!--<img src="https://material.angular.io/assets/img/examples/shiba1.jpg" style="border-radius: 50%; width: 80%; height: 85%">-->
 
-              <label *ngIf="Usuarios.estatus == 1" class="label-activo">A</label>
-              <label *ngIf="Usuarios.estatus == 0" class="label-inactivo">I</label>
-              <label *ngIf="Usuarios.estatus == 3" class="label-faltapago">FP</label>
+              <label *ngIf="Usuarios.estatus == 1" class="label-clase-activa">A</label>
+              <label *ngIf="Usuarios.estatus == 0" class="label-clase-inactiva">I</label>
+              <label *ngIf="Usuarios.estatus == 3" class="label-clase-faltapago">FP</label>
 
               <label *ngIf="Usuarios.idRol == 1" class="label-usuario-a">Admin</label>
               <label *ngIf="Usuarios.idRol == 2" class="label-usuario">Usuario</label>
@@ -73,14 +73,14 @@
            <ion-row>
             <ion-col>
               <label *ngIf="Usuarios.idRol == 2" class="lvencimiento">
-                {{Usuarios.membresia}}
+                {{Usuarios.membresia}}  
                 
               </label>
             </ion-col>
            </ion-row>
            <ion-row>
             <ion-col>
-              <label *ngIf="Usuarios.idRol == 2 && Usuarios.vencimiento != 'N/A'" class="label-membresiavenc">{{Usuarios.vencimiento}}</label>
+              <label *ngIf="Usuarios.idRol == 2 && Usuarios.vencimiento != 'N/A'" class="label-base-color">{{Usuarios.vencimiento}}</label>
               <!--<label *ngIf="Usuarios.idRol == 3" class="lvencimiento">
                 Clases 6,7,8
               </label>-->

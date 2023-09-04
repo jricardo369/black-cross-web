@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/servicios/login.service';
 })
 export class CambiarpassPage implements OnInit {
 
-  urlapi = "http://localhost:8080/bk-api/"
+  urlapi = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/"
 
   cp = {
     "idUsuario": "",
@@ -149,7 +149,7 @@ export class CambiarpassPage implements OnInit {
   }
 
   bloqueado(idUsuario){
-    this.servicio.getData('http://localhost:8080/bk-api/Usuarios/bloqueo-por-pago/'+ idUsuario ).subscribe(data => {
+    this.servicio.getData('http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/Usuarios/bloqueo-por-pago/'+ idUsuario ).subscribe(data => {
 
       this.usuario = data;
       console.log(data);

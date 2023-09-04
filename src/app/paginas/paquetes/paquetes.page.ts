@@ -12,7 +12,7 @@ import { Storage } from "@ionic/storage";
 })
 export class PaquetesPage implements OnInit {
 
-  urlapi = "http://localhost:8080/bk-api/";
+  urlapi = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/";
 
   ionViewWillEnter() {
     this.idUsuario = this.activatedRoute.snapshot.paramMap.get("idUsuario");

@@ -65,7 +65,7 @@ export class AsistenciaPage implements OnInit {
 
   asistencia() {
     this.servicio.getDataPost(
-        "http://localhost:8080/bk-api/AsistenciaSitio/" +
+        "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/AsistenciaSitio/" +
           this.codigo+"?sociedad="+this.sociedad
       )
       .subscribe((data: any) => {

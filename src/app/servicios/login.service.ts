@@ -7,8 +7,8 @@ import { delay } from "rxjs/operators"
   providedIn: "root",
 })
 export class LoginService {
-  //url = "http://localhost:8080/bk-api/";  
-  url = "http://localhost:8080/bk-api/";
+  //url = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/";  
+  url = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/";
   httpOptions;
 
   constructor(private http: HttpClient) {

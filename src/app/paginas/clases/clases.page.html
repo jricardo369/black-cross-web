@@ -51,11 +51,11 @@
         <ion-grid>
           <ion-row>
             <ion-col>
-              <label *ngIf="Clases.estatus == '1'" class="label-estatus-a">
-                A
+              <label *ngIf="Clases.estatus == '1'" class="label-clase-activa">
+                Activa
               </label>
-              <label *ngIf="Clases.estatus == '0'" class="label-estatus-i">
-                I
+              <label *ngIf="Clases.estatus == '0'" class="label-clase-inactiva">
+                Inactiva
               </label>
               <label style="font-weight: bold; font-size: 13px;">
                 <!--{{Clases.diaDescripcion}}-->
@@ -89,7 +89,7 @@
           </ion-row>-->
           <ion-row>
             <ion-col>
-              <label style=" font-size: 13px;color: #83BA1B;font-weight: bold;">
+              <label class="label-coach-nombre">
                 Couch: {{Clases.profesorNombre}}
               </label>
             </ion-col>

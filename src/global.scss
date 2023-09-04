@@ -98,6 +98,64 @@
     /** and lots more **/
   }
 
+  .label-clase-activa {
+    background-color: #c1eddf;
+    padding: 4px;
+    margin-right: 3px;
+    color: #25B386;
+    border-radius: 15px;
+    font-size: 8px;
+  }
+  
+  .label-clase-inactiva {
+    background-color: #f7e0cb;
+    padding: 4px;
+    margin-right: 3px;
+    color: #E09145;
+    border-radius: 15px;
+    font-size: 8px;
+  }
+
+  .label-clase-faltapago {
+    background-color: #e7fdbd;
+    padding: 4px;
+    margin-right: 3px;
+    color: #67803b;
+    border-radius: 15px;
+    font-size: 8px;
+  }
+
+  .label-coach-nombre {
+    padding: 4px;
+    font-weight: bold;
+    color: #989DAA;
+    font-size: 13px;
+  }
+
+  .label-base-color {
+    background-color: #e7fdbd;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #67803b;
+    border-radius: 15px;
+    font-size: 10px;
+  }
+
+  .label-base-color-right {
+    clear: right;
+    float: right;
+    background-color: #e7fdbd;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #67803b;
+    border-radius: 15px;
+    font-size: 10px;
+  }
+
 
   body.dark {
     --ion-color-primary: #428cff;

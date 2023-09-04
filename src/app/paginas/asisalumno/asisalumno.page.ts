@@ -29,7 +29,7 @@ export class AsisalumnoPage implements OnInit {
   fecha: string;
   mensajeerror: string;
 
-  urlapi = "http://localhost:8080/bk-api/"
+  urlapi = "http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/"
 
   constructor(
     private servicio: LoginService,
@@ -198,7 +198,7 @@ export class AsisalumnoPage implements OnInit {
 
     console.log("El ID de la clase es :", this.idClase);
 
-    this.servicio.getData('http://localhost:8080/bk-api/AsistenciaClases/' + this.idClase + '/').subscribe(data => {
+    this.servicio.getData('http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/AsistenciaClases/' + this.idClase + '/').subscribe(data => {
       console.log(data, "ngOnInit");
       this.listado = data;
 
@@ -214,7 +214,7 @@ export class AsisalumnoPage implements OnInit {
 
     this.fecha = this.fa.fecha.substring(0, 10);
 
-    this.servicio.getData('http://localhost:8080/bk-api/AsistenciaClases/' + this.idClase + '?fecha=' + this.fecha).subscribe(data => {
+    this.servicio.getData('http://ec2-13-58-189-47.us-east-2.compute.amazonaws.com:8080/bk-api/AsistenciaClases/' + this.idClase + '?fecha=' + this.fecha).subscribe(data => {
       console.log(data, "cambioFecha");
       this.listado = data;
     });
